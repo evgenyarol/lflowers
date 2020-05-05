@@ -3,10 +3,10 @@ const Employee = require('../../models/employee/employee');
 const Order = require('../../models/orders/order');
 
 router.post('/', async (req, res) => {
-    const { _id , firstname, lastname , status, order , employeeStatus} = req.body;
+    const { _id , firstname, lastname , status, order , employeeType} = req.body;
     let  createdAt = new Date().toLocaleString();
 
-    await Employee.create({owner: _id, firstname, lastname, status, createdAt, order, employeeStatus})
+    await Employee.create({owner: _id, firstname, lastname, status, createdAt, order, employeeType})
     .then(employee => {
         return res.json(employee);
     })

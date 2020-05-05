@@ -1,11 +1,10 @@
 const mongoose = require('../../../db/db');
-const { Schema: {Types: {ObjectId, String, Date, Number }}} = mongoose;
+const { Schema: {Types: {ObjectId, String, Date }}} = mongoose;
 
 const Employee = mongoose.Schema({
-    employeeStatus: { type: String, required: false},
-    firstname: { type: String, required: true},
-    lastname : { type: String, required: true},
-    status: { type: String, required: false},
+    employeeType: [{ type: String, required: false}],
+    firstname: { type: String, required: false},
+    lastname : { type: String, required: false},
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
     order: {
